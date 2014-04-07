@@ -10,6 +10,8 @@ class User < ActiveRecord::Base
   # :password_digest removed from attr_accessible for security
   attr_accessible :email, :fname, :lname, :password, :password_confirmation
   
+  has_many :sites
+  
   validates :fname, :presence => true
   validates :lname, :presence => true
   validates :email, :presence => true, :uniqueness => true
