@@ -1,8 +1,11 @@
 Gamezelp::Application.routes.draw do
   
+  get "sites/index"
+
   # Site resources (index is root view)
   resources :sites, :only => :index
   
+  root :to => 'sites#index'
   
   # The priority is based upon order of creation:
   # first created -> highest priority.
