@@ -1,75 +1,55 @@
-<%= @sites %>
-<div class="pages" id="site_index_page">
+<div class="mainWrapper">
   
-  <div class="top_bar clearfix">
-    
-    <div id="top_left">
-      <div id="app_title">
+  <!-- Header Bar (Top Bar/Nav Bar) -->  
+  <div class="centeredContainer" id="headerBox">
+
+  <!-- Header/Top Bar (Title/User/Login/Search) -->  
+    <div id="top_bar">
+      <div id="top_left">
         <h1>GAMEZelp</h1>
-      </div>
-      <div id="user_or_login">
-        User Name -or- <a href="#">LogIn</a>
-      </div>
-    </div>    
-    <div id="top_right">    
-      <div id="search_box">
-        <input type="search" placeholder="Search for game...">
+        <h4>User Name -or- <a href="#">LogIn</a></h4>
       </div>    
-    </div>  
-  </div>
-  
-  <!-- <hr> -->
-  
-  <div class="clearfix" id="nav_bar">
-    <div class="" id="nav_left">
-      <div class="menu_button">
-        <a href="#" id="m1">HOME</a> 
+      <div id="search_box">
+        <form action="/" method="get">
+          
+          <input type="search" id="gameSearch" name="gameQuery"placeholder="Search for game...">
+        </form>
+      </div>    
+    </div>
+    
+  <!-- Header/Nav Menu Bar (Home, MyGames, Platform, About) -->  
+    <div class="clearfix" id="nav_bar">
+      <div class="navBtn btn1">
+        <a href="/" id="m1">HOME</a> 
       </div>
-      <div class="menu_button">
+      <div class="navBtn btn2">
         <a href="#" id="m2">MyGames</a>
       </div>
-    </div>
-    <div class="" id="nav_right">
-      <div class="menu_button">
-        <a href="#" id="m4">About</a> 
-      </div>
-      <div class="menu_button">
+      <div class="navBtn btn3">
         <a href="#" id="m3">Platform</a>
       </div>
-    </div>
-  </div>
-  
-  <!-- <hr> -->
-  
-  <div id="sites_container">
-    <div id="sites_grid">
-      <div class="sites_row clearfix">
-        <div class="site_box" id="sb1">
-          <%= @sites[0].name %><br>
-          <%= @sites[0].base_url %>          
-        </div>
-        <div class="site_box" id="sb2">
-        </div>
-        <div class="site_box" id="sb3">
-        </div>
-      </div>
-      <div class="sites_row clearfix">
-        <div class="site_box" id="sb4">
-        </div>
-        <div class="site_box" id="sb5">
-        </div>
-        <div class="site_box" id="sb6">
-        </div>
-      </div>
-      <div class="sites_row clearfix">        
-        <div class="site_box" id="sb7">
-        </div>
-        <div class="site_box" id="sb8">
-        </div>
+      <div class="navBtn btn4">
+        <a href="#" id="m4">About</a> 
       </div>
     </div>
+  
   </div>
+    
+  <!-- Site Grid Galery -->  
+  <div class="sites_wrap">
+    
+    <% @sites.each do |site| %>
+    
+      <!-- Define box tile for each site-->
+      <div class="site_box">
+        <div class="boxInner">
+          <div class="titleBox"><%= site.name %></div>
+          <img src="http://www.dwuser.com/education/content/creating-responsive-tiled-layout-with-pure-css/images/demo/12.jpg" />
+        </div>
+      </div> 
+    
+    <% end %>  
+               
 
-  <hr>
-  
 </div>
+
