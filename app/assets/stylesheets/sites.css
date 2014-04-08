@@ -21,17 +21,70 @@
   padding: 10px;
 }
 
+#top_left {
+  border: 1px solid black;
+  float: left;
+  padding: 5px;
+}
+
+#top_right {
+  border: 1px solid black;
+  float: right;
+  padding: 5px;
+}
+
 #app_title, #user_or_login {
   color: #60C0AC; 
+  border: 1px solid black;
+}
+
+#search_box {
+  float: right;
+  border: 1px solid black;
+  
+}
+
+#nav_bar {
+/*  height: 70px;*/
+  width: 100%;
+  display: inline-block;
+  background-color: darkgray;
 }
 
 #nav_left {
+  width: 40%;
+  height: 50px;
+ 
+  border: 1px solid magenta;
+  display: block;
   float: left;
+  padding: 5px;
 }
 
 #nav_right {
+  width: 40%;
+  height: 50px;
+  border: 1px solid pink;
+  display: block;
   float: right;
+  padding: 5px;
 }
+
+#nav_left .menu_button {
+  border: 1px solid black;
+  display: inline-block;
+  margin: 2px; 
+  float: left; 
+}
+
+#nav_right .menu_button {
+  border: 1px solid black;
+  display: inline-block;
+  margin: 2px; 
+  float: right; 
+}
+
+
 #sites_container {
   background-color: rgb(215, 246, 250);
   border: 1px solid gray;
@@ -42,6 +95,8 @@
 
 .sites_row {
   margin: 0 auto;
+  border: 1px solid black;
+  
 }
 
 .site_box {
