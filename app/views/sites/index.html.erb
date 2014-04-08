@@ -1,0 +1,55 @@
+<div class="mainWrapper">
+  
+  <!-- Header Bar (Top Bar/Nav Bar) -->  
+  <div class="centeredContainer" id="headerBox">
+
+  <!-- Header/Top Bar (Title/User/Login/Search) -->  
+    <div id="top_bar">
+      <div id="top_left">
+        <h1>GAMEZelp</h1>
+        <h4>User Name -or- <a href="#">LogIn</a></h4>
+      </div>    
+      <div id="search_box">
+        <form action="/" method="get">
+          
+          <input type="search" id="gameSearch" name="gameQuery"placeholder="Search for game...">
+        </form>
+      </div>    
+    </div>
+    
+  <!-- Header/Nav Menu Bar (Home, MyGames, Platform, About) -->  
+    <div class="clearfix" id="nav_bar">
+      <div class="navBtn btn1">
+        <a href="/" id="m1">HOME</a> 
+      </div>
+      <div class="navBtn btn2">
+        <a href="#" id="m2">MyGames</a>
+      </div>
+      <div class="navBtn btn3">
+        <a href="#" id="m3">Platform</a>
+      </div>
+      <div class="navBtn btn4">
+        <a href="#" id="m4">About</a> 
+      </div>
+    </div>
+  
+  </div>
+    
+  <!-- Site Grid Galery -->  
+  <div class="sites_wrap">
+    
+    <% @sites.each do |site| %>
+    
+      <!-- Define box tile for each site-->
+      <div class="site_box">
+        <div class="boxInner">
+          <div class="titleBox"><%= site.name %></div>
+          <img src="http://www.dwuser.com/education/content/creating-responsive-tiled-layout-with-pure-css/images/demo/12.jpg" />
+        </div>
+      </div> 
+    
+    <% end %>  
+               
+
+</div>
+
