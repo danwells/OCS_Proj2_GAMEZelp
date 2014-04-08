@@ -2,3 +2,54 @@
   Place all the styles related to the matching controller here.
   They will automatically be included in application.css.
 */
+
+/* ------------------- Utilities ------------------------------ */
+
+.clearfix:before,
+.clearfix:after {
+  content: " ";
+  display: table;
+}
+.clearfix:after {
+  clear: both;
+}
+
+/* -------------------- Page specific ------------------------- */
+
+.top_bar {
+  background-color: #4046D2;
+  padding: 10px;
+}
+
+#app_title, #user_or_login {
+  color: #60C0AC; 
+}
+
+#nav_left {
+  float: left;
+}
+
+#nav_right {
+  float: right;
+}
+#sites_container {
+  background-color: rgb(215, 246, 250);
+  border: 1px solid gray;
+  width: 98%;
+  margin: 0 auto;
+  /* height: 300px; */
+}
+
+.sites_row {
+  margin: 0 auto;
+}
+
+.site_box {
+  background-color: blue;
+  border: 1px solid gray;
+  width: 100px;
+  width: 31%;
+  height: 300px;
+  margin: 12px;
+  float: left;  }
+}
