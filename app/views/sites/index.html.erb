@@ -48,8 +48,8 @@
             <%=image_tag(site.background_img, alt: "IGN Logo Image")%>
             <!-- <img src="/assets/ign-logo_288x288.jpg" /> -->
             <div class="guideLinks">              
-              <% @link_urls.each do |link| %>
-                <p><%= link %></p>
+              <% @game.guide_links.each_with_index do |link, index| %>
+                <a href="<%= link %>"><%= @link_titles[index] %></a>
               <% end %>
             </div>
           <% else %>
