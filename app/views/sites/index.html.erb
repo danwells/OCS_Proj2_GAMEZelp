@@ -44,13 +44,16 @@
       <div class="site_box">
         <div class="boxInner">
           <div class="titleBox"><%= site.name %></div>
-          <img src="http://www.dwuser.com/education/content/creating-responsive-tiled-layout-with-pure-css/images/demo/12.jpg" />
           <% if site.name == "IGN" %>
+            <%=image_tag(site.background_img, alt: "IGN Logo Image")%>
+            <!-- <img src="/assets/ign-logo_288x288.jpg" /> -->
             <div class="guideLinks">              
               <% @link_urls.each do |link| %>
                 <p><%= link %></p>
               <% end %>
             </div>
+          <% else %>
+            <img src="http://www.dwuser.com/education/content/creating-responsive-tiled-layout-with-pure-css/images/demo/12.jpg" />
           <% end %>
         </div>
       </div> 
