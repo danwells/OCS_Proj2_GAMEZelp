@@ -45,11 +45,19 @@
         <div class="boxInner">
           <div class="titleBox"><%= site.name %></div>
           <img src="http://www.dwuser.com/education/content/creating-responsive-tiled-layout-with-pure-css/images/demo/12.jpg" />
+          <% if site.name == "IGN" %>
+            <div class="guideLinks">              
+              <% @link_urls.each do |link| %>
+                <p><%= link %></p>
+              <% end %>
+            </div>
+          <% end %>
         </div>
       </div> 
     
-    <% end %>  
-               
+    <% end %>
+      
+  </div>
 
 </div>
 

@@ -158,10 +158,6 @@ a:link {
   overflow: hidden;
 }
 
-.boxInner img {
-  width: 100%;
-}
-
 .boxInner .titleBox {
   position: absolute;
   top: 0;
@@ -174,3 +170,27 @@ a:link {
   padding: 10px;
   text-align: center;
 }
+
+.boxInner img {
+  width: 100%;
+}
+
+.boxInner .guideLinks {
+  position: absolute;
+  bottom: 3px;
+  top: 41px;
+  left: 3px;
+  right: 3px;
+  /* margin-top: 0px; */
+  background: #000;
+  background: rgba(0, 0, 0, 0.5);
+  color: #fff;
+  padding: 10px;
+  text-align: center;
+}
+
+.boxInner p {
+  color: white;
+  font-size: 12px;
+}
+
