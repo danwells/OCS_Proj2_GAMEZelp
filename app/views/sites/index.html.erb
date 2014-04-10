@@ -55,7 +55,7 @@
             <ul>  
               <% if (@site_results[i]) %>      
                 <% @site_results[i]["links"].each_with_index do |link, index| %>
-                  <li><%= link_to strip_tags(@site_results[0]["titles"][index]), link  %></li>
+                  <li><%= link_to strip_tags(@site_results[i]["titles"][index]), link  %></li>
                 <% end %>
               <% else %>
                 <li>Coming Soon...</li>

@@ -24,7 +24,7 @@ class ApplicationController < ActionController::Base
       end
       
     when 'GameSpot'
-      # Specific setup for GameSpt site
+      # Specific setup for GameSpot site
       query = URI.escape(game_title + " guide")
       search_str = "http://" + @site.base_url + @site.search_string + query
       css_selector = "ul#js-sort-filter-results.editorial.river.search-results li a"
@@ -34,6 +34,21 @@ class ApplicationController < ActionController::Base
       results.each do |r|
         if (r.children.count > 1)
           @link_titles << r.children[1].children[1].children[1].attributes["alt"].value.strip
+          @game.guide_links << "http://" + @site.base_url + r.attributes["href"].value
+        end
+      end
+
+    when 'GiantBomb'
+      # Specific setup for GiantBomb site
+      query = URI.escape(game_title + " guide")
+      search_str = "http://" + @site.base_url + @site.search_string + query
+      css_selector = "ul#js-sort-filter-results.editorial.river.search-results li a"
+      doc = Nokogiri::HTML(open(search_str))
+      results = doc.css(css_selector)
+        
+      results.each do |r|
+        if (r.children.count > 1)
+          @link_titles << r.children[1].children[1].attributes["alt"].value.strip
           @game.guide_links << "http://" + @site.base_url + r.attributes["href"].value
         end
       end

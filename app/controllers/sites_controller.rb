@@ -13,6 +13,9 @@ class SitesController < ApplicationController
       
       @gamespot_hash = nokogiriGetGuideLinksWithTitles('GameSpot', params[:gameQuery])
       @site_results << @gamespot_hash
+
+      @giantbomb_hash = nokogiriGetGuideLinksWithTitles('GiantBomb', params[:gameQuery])
+      @site_results << @giantbomb_hash
       
       
       # Manual setup for IGN site
