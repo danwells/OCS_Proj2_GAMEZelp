@@ -38,18 +38,37 @@
   <!-- Site Grid Galery -->  
   <div class="sites_wrap">
     
-    <% @sites.each do |site| %>
+    <% @sites.each_with_index do |site, i| %>
     
       <!-- Define box tile for each site-->
       <div class="site_box">
         <div class="boxInner">
-          <div class="titleBox"><%= site.name %></div>
-          <img src="http://www.dwuser.com/education/content/creating-responsive-tiled-layout-with-pure-css/images/demo/12.jpg" />
+          <div class="titleBox">
+            <%= site.name %>
+          </div>
+    <%# if site.name == "IGN" %>
+          <%=image_tag(site.background_img, alt: "#{site.name} Logo Image")%>
+          <div class="guideLinks">   
+            <%# binding.pry %>   
+            
+            <!-- List resultant guide links (name,url) for site at index i -->
+            <ul>  
+              <% if (@site_results[i]) %>      
+                <% @site_results[i]["links"].each_with_index do |link, index| %>
+                  <li><%= link_to strip_tags(@site_results[i]["titles"][index]), link  %></li>
+                <% end %>
+              <% else %>
+                <li>Coming Soon...</li>
+              <% end %>
+            </ul>
+              
+          </div>
         </div>
       </div> 
     
-    <% end %>  
-               
+    <% end %>
+      
+  </div>
 
 </div>
 
