@@ -7,14 +7,14 @@ class SitesController < ApplicationController
     # @game = Game.new
     # @link_urls = []
     @site_results = []
-    if params[:gameQuery]
-      @ign_hash = nokogiriGetGuideLinksWithTitles('IGN', params[:gameQuery])
+    if (params[:gameSearch] && !(game_title = params[:gameSearch][:gameQuery]).nil?)
+      @ign_hash = nokogiriGetGuideLinksWithTitles('IGN', game_title)
       @site_results << @ign_hash
       
-      @gamespot_hash = nokogiriGetGuideLinksWithTitles('GameSpot', params[:gameQuery])
+      @gamespot_hash = nokogiriGetGuideLinksWithTitles('GameSpot', game_title)
       @site_results << @gamespot_hash
 
-      @giantbomb_hash = nokogiriGetGuideLinksWithTitles('GiantBomb', params[:gameQuery])
+      @giantbomb_hash = nokogiriGetGuideLinksWithTitles('GiantBomb', game_title)
       @site_results << @giantbomb_hash
       
       

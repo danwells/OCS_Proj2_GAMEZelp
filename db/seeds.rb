@@ -13,5 +13,5 @@ Site.create(name: "GameSpot", base_url: "www.gamespot.com", search_string: "/sea
 Site.create(name: "GiantBomb", base_url: "www.giantbomb.com", search_string: "/search/?q=", logo_img: "giant-bomb.png", background_img: "giant-bomb.png")
 Site.create(name: "GamesRadar", base_url: "www.gamesradar.com", logo_img: "gamesradar.png", background_img: "gamesradar.png")
 Site.create(name: "Game Guides", base_url: "www.gamepressure.com", logo_img: "gamepressure.png", background_img: "gamepressure.png")
-Site.create(name: "ViedoGames Blogger", base_url: "www.videogamesblogger.com", logo_img: "vgblogo.png", background_img: "vgblogo.png")
 Site.create(name: "GameFAQs", base_url: "www.gamefaqs.com", logo_img: "gamefaqs.jpg", background_img: "gamefaqs.jpg")
+Site.create(name: "ViedoGames Blogger", base_url: "www.videogamesblogger.com", logo_img: "vgblogo.png", background_img: "vgblogo.png")

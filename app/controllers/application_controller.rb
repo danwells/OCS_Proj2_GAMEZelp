@@ -1,6 +1,8 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery
 
+  include ActionView::Helpers::TextHelper
+
   helper_method :nokogiriGetGuideLinksWithTitles
   
   def nokogiriGetGuideLinksWithTitles(site_name, game_title)
@@ -8,6 +10,8 @@ class ApplicationController < ActionController::Base
     @game = Game.new(title: game_title.titleize)
     @site = Site.find_by_name(site_name)
     
+    
+    # !!! These cases should be refactored (a lot of duplication right now)
     case site_name
       
     when 'IGN'
@@ -19,7 +23,7 @@ class ApplicationController < ActionController::Base
       results = doc.css(css_selector)
         
       results.each do |r|
-        @link_titles << r.children.to_s.strip
+        @link_titles << strip_tags(r.children.to_s.strip)
         @game.guide_links << r.attributes["href"].value
       end
       
@@ -33,7 +37,7 @@ class ApplicationController < ActionController::Base
         
       results.each do |r|
         if (r.children.count > 1)
-          @link_titles << r.children[1].children[1].children[1].attributes["alt"].value.strip
+          @link_titles << strip_tags(r.children[1].children[1].children[1].attributes["alt"].value.strip)
           @game.guide_links << "http://" + @site.base_url + r.attributes["href"].value
         end
       end
@@ -48,13 +52,14 @@ class ApplicationController < ActionController::Base
         
       results.each do |r|
         if (r.children.count > 1)
-          @link_titles << r.children[1].children[1].attributes["alt"].value.strip
+          @link_titles << strip_tags(r.children[1].children[1].attributes["alt"].value.strip)
           @game.guide_links << "http://" + @site.base_url + r.attributes["href"].value
         end
       end
 
     else
-      # default case
+      @link_titles << "No Results..."
+      @game.guide_links << "#"
       
     end
 

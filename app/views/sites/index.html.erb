@@ -5,16 +5,18 @@
 
   <!-- Header/Top Bar (Title/User/Login/Search) -->  
     <div id="top_bar">
+      
       <div id="top_left">
         <h1>GAMEZelp</h1>
         <h4>User Name -or- <a href="#">LogIn</a></h4>
       </div>    
+      
       <div id="search_box">
-        <form action="/" method="get">
-          
-          <input type="search" id="gameSearch" name="gameQuery"placeholder="Search for game...">
-        </form>
-      </div>    
+        <%= form_tag("/", method: "get") do %>
+          <%= search_field("gameSearch", "gameQuery", :placeholder => "Search for game title...")  %>
+        <% end %>                
+      </div>  
+        
     </div>
     
   <!-- Header/Nav Menu Bar (Home, MyGames, Platform, About) -->  
@@ -55,7 +57,7 @@
             <ul>  
               <% if (@site_results[i]) %>      
                 <% @site_results[i]["links"].each_with_index do |link, index| %>
-                  <li><%= link_to strip_tags(@site_results[i]["titles"][index]), link  %></li>
+                  <li><%= link_to @site_results[i]["titles"][index], link  %></li>
                 <% end %>
               <% else %>
                 <li>Coming Soon...</li>
