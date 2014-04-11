@@ -94,14 +94,15 @@ a:link {
 }
 
 #search_box #gameSearch_gameQuery {
-  margin: 12px 0 0 14px;
-  padding: 0;
-  width: 176px;
+  margin: 5px;
+  padding: 0px;
+  width: 227px;
+  height: 26px;
   vertical-align: middle;
   background: none;
   border: none;
   border-width: 0;
-  font-size: 14px;
+  font-size: 18px;
   font-weight: bold;
   color: #030DF3;
 }
@@ -111,7 +112,7 @@ a:link {
 #headerBox #nav_bar {
   z-index: 55;
   position: relative;
-  padding: 20px 15px;
+  padding: 0px 30px;
   font-size: 12px;
 /*  text-transform: uppercase;*/
   font-weight: normal;
@@ -121,17 +122,59 @@ a:link {
 
 #nav_bar .navBtn {
   font-size: x-large;
-  font-color: blue;
-  margin-right: 30px;
+  text-align: center;
+  margin: 0px 0px;
+  padding: 15px;
   height: 25px;
   float: left;
   position: relative;
+  transition: all 0.3s ease-out;
+}
+
+.drop_down {
+  position: relative;
+  /* bottom: 0px; */
+  /* top: 38px; */
+/*  left: 0px;*/
+/*  right: 0px;*/
+  /* background: #000; */
+  background: #393939;
+  opacity: 0.9;
+  color: #fff;
+  padding: 5px;
+  margin-top: 11px;
+  text-align: center;
+  overflow: auto;
+  display: none;
+}
+
+.drop_down ul li {
+  transition: all 0.1s ease-in;
+}
+
+.drop_down ul li:hover, 
+.drop_down ul li:active {
+  background: rgba(135, 100, 233, 0.8);
+}
+
+#nav_bar .navBtn:hover,
+#nav_bar .navBtn:active {
+  background: #393939;
+}
+
+#nav_bar #btn3, 
+#nav_bar #btn4 {
+  float: right;
 }
 
 #nav_bar .navBtn a {
   color: white;
 }
 
+#nav_bar #btn1 a:hover, #nav_bar #btn4 a:hover,
+#nav_bar #btn1 a:active, #nav_bar #btn4 a:active {
+  color: #6167D4;
+}
 /* ------------------- Sites Grid Area----------------- */
 
 .sites_wrap {
@@ -183,9 +226,7 @@ a:link {
   top: 38px;
   left: 0px;
   right: 0px;
-  /* margin-top: 0px; */
   background: #000;
-/*  background: rgba(0, 0, 0, 0.5);*/
   background-color: rgba(10, 19, 233, 0.2);
   color: #fff;
   padding: 10px;
@@ -217,7 +258,6 @@ a:link {
   text-align: center;
   padding: 2px;
   text-decoration: none;
-/*  text-transform: uppercase;*/
 }
 
 .guideLinks li a:hover, 

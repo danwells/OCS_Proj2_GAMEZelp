@@ -21,19 +21,46 @@
     
   <!-- Header/Nav Menu Bar (Home, MyGames, Platform, About) -->  
     <div class="clearfix" id="nav_bar">
-      <div class="navBtn btn1">
+      
+      <div class="navBtn" id="btn1">
         <a href="/" id="m1">HOME</a> 
       </div>
-      <div class="navBtn btn2">
+      
+      <div class="navBtn" id="btn2">
         <a href="#" id="m2">MyGames</a>
+        <div class="drop_down">
+          <ul>
+            <% @prev_queries.each do |query| %>
+              <li>
+                <%= link_to query, sites_path(:prev_query => query)  %>
+              </li>
+            <% end %>
+          </ul>           
+        </div>
       </div>
-      <div class="navBtn btn3">
+      
+     <div class="navBtn" id="btn4">
+        <a href="/" id="m4">About</a>
+      </div>
+      
+      <div class="navBtn" id="btn3">
         <a href="#" id="m3">Platform</a>
+        <div class="drop_down">
+          <ul>
+            <li>ALL (Default)</li>
+            <li>PC</li>
+            <li>XBox ONE</li>
+            <li>XBox 360</li>
+            <li>PS3</li>
+            <li>PS4</li>
+            <li>Wii U</li>
+            <li>3DS</li>
+            <li>Vita</li>
+          </ul>           
+        </div>
       </div>
-      <div class="navBtn btn4">
-        <a href="#" id="m4">About</a> 
-      </div>
-    </div>
+      
+     </div>
   
   </div>
     
@@ -48,19 +75,22 @@
           <div class="titleBox">
             <%= site.name %>
           </div>
-    <%# if site.name == "IGN" %>
+
           <%=image_tag(site.background_img, alt: "#{site.name} Logo Image")%>
           <div class="guideLinks">   
-            <%# binding.pry %>   
             
             <!-- List resultant guide links (name,url) for site at index i -->
             <ul>  
               <% if (@site_results[i]) %>      
                 <% @site_results[i]["links"].each_with_index do |link, index| %>
-                  <li><%= link_to @site_results[i]["titles"][index], link  %></li>
+                  <li>
+                    <%= link_to @site_results[i]["titles"][index], link  %>
+                  </li>
                 <% end %>
+              <% elsif i < 3 %>
+                <li><h3>Enter Game Title for Search...</h3></li>
               <% else %>
-                <li>Coming Soon...</li>
+                <li><h3>Coming Soon...</h3></li>
               <% end %>
             </ul>
               

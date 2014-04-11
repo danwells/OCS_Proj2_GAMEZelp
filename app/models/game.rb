@@ -4,6 +4,6 @@ class Game < ActiveRecord::Base
   
   belongs_to :site
   
-  validates :title, :uniqueness => true
+  validates :title, :presence => true
   
 end
