@@ -7,8 +7,10 @@
     <div id="top_bar">
       
       <div id="top_left">
-        <h1>GAMEZelp</h1>
-        <h4>User Name -or- <a href="#">LogIn</a></h4>
+        <h1 id="gamezelp_title">GAMEZelp</h1>
+        <h4 id="login_btn">
+          <%= @curr_user.fname.titleize + " " + @curr_user.lname.titleize %>   
+          |   <a href="#">LogIn</a></h4>
       </div>    
       
       <div id="search_box">

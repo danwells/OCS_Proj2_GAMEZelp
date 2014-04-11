@@ -26,6 +26,7 @@ class SitesController < ApplicationController
       
     end
     
+    @curr_user = User.find(1)
     @sites = Site.all
     @prev_queries = Game.pluck("title").uniq
 

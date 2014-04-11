@@ -73,8 +73,22 @@ a:link {
 
 #headerBox #top_left h1, #headerBox #top_left h4 {
 /*  display: none;*/
-  color: #60C0AC;
+  color: #0FEBE2;
   text-align: center; 
+}
+
+h1#gamezelp_title {
+  top: -15px;
+  font-size: 56px;
+  position: relative;
+  width: 285px;
+  height: 40px;
+  padding: 0px;  
+}
+
+h4#login_btn a {
+  color: lawngreen;
+  text-decoration: underline;
 }
 
 #top_bar #search_box {
