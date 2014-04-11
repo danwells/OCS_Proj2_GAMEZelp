@@ -59,6 +59,7 @@ a:link {
   z-index: 50;
   position: relative;
   background-color: #191C42;
+  padding: 6px 0px;
 }
 
 #headerBox #top_left {
@@ -137,6 +138,41 @@ h4#login_btn a {
   font-size: 18px;
   font-weight: bold;
   color: #030DF3;
+}
+
+#logo_container {
+  position: absolute;
+  /* float: right; */
+  right: 17px;
+  top: 2px;  
+}
+
+.gz_sprite {
+  width: 128px;
+  height: 0;
+  padding-top: 128px;
+  overflow: hidden;
+  background: url("GAMEZelp_logos.png");
+}
+
+.gz_blue_logo {
+  background-size: 256px;
+  background-position: 0px 0px;
+}
+
+.gz_red_logo {
+  background-size: 256px;
+  background-position: 128px 0px;
+}
+
+.gz_green_logo {
+  background-size: 256px;
+  background-position: 128px 128px;
+}
+
+.gz_purple_logo {
+  background-size: 256px;
+  background-position: 0px 128px;
 }
 
 /* ------------------- Header/Nav Bar ----------------- */
