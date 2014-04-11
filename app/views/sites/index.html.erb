@@ -13,12 +13,17 @@
           |   <a href="#">LogIn</a></h4>
       </div>    
       
+      <div id="title_image">
+        GAMEZelp Title Image
+        <%#= image_tag("GZ_Title.png", alt: "GameZelp Logo Image") %>
+      </div>
+        
       <div id="search_box">
         <%= form_tag("/", method: "get") do %>
           <%= search_field("gameSearch", "gameQuery", :placeholder => "Search for game title...")  %>
         <% end %>                
       </div>  
-        
+      
     </div>
     
   <!-- Header/Nav Menu Bar (Home, MyGames, Platform, About) -->  

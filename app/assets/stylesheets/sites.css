@@ -66,7 +66,6 @@ a:link {
   width: 280px;
   height: 60px;
   padding: 30px 30px;
-/*  background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAARgAAAA0CAYAAABRlyd1AAAABHNCS…ma7K3R8fLFsh54f0gs/lh/Hy+wtCXHiVKs588/8w4JMP8PXLsIoSt9+nsAAAAASUVORK5CYII=);*/
   background-position: 0 28px;
   background-repeat: no-repeat;
 }
@@ -84,26 +83,45 @@ h1#gamezelp_title {
   width: 285px;
   height: 40px;
   padding: 0px;  
+  top: -100px;
+  overflow: hidden;
 }
 
+h4#login_btn {
+  margin-top: 15px;
+}
 h4#login_btn a {
   color: lawngreen;
   text-decoration: underline;
 }
 
+#title_image {
+  width: 340px;
+  height: 0px;
+  padding-top: -240px;
+  padding-bottom: 184px;
+  display: block;
+  background: url("GZ_TitleKH.png");
+  background-size: cover;
+  overflow: hidden;
+  float: left;
+  position: absolute;
+  top: -75px;
+  transition: all 0.3s ease-out;
+}
+
 #top_bar #search_box {
   z-index: 50;
   position: relative;
+  right: 200px;
   width: 227px;
   height: 35px;
   float: right;
-  margin-top: 45px;
+  margin-top: 40px;
   margin-right: 30px;
   padding-right: 10px;
   background-color: aliceblue;
   border-radius: 5px;
-  /*background-image: url(data:image/gif;base64,R0lGODlh4wAjAMQAABERESoqKmZmZiEhIcbGxrW1tRkZGTw8PHt7e…JUgCDCUmpaw+q8WkKs2Zayzqpl2GKtW38vArydu41sC7l08zazm6Wv37+AAwseTLiw4REhAAA7);*/
-/*  background-repeat: no-repeat;*/
   vertical-align: top;
 }
 
@@ -159,6 +177,7 @@ h4#login_btn a {
   margin-top: 11px;
   text-align: center;
   overflow: auto;
+  z-index: 100;
   display: none;
 }
 
