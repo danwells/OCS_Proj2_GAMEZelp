@@ -60,6 +60,10 @@ a:link {
   position: relative;
   background-color: #191C42;
   padding: 6px 0px;
+  background: -webkit-linear-gradient(#191C42, #040CCA, #191C42);
+  background: -o-linear-gradient(#191C42, #040CCA, #191C42);
+  background: -moz-linear-gradient(#191C42, #040CCA, #191C42);
+  background: linear-gradient(#191C42, #040CCA, #191C42);
 }
 
 #headerBox #top_left {
