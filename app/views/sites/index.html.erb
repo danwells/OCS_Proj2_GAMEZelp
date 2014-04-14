@@ -99,7 +99,7 @@
                     <%= link_to @site_results[i]["titles"][index], link  %>
                   </li>
                 <% end %>
-              <% elsif i < 3 %>
+              <% elsif i < @implemented_sites.count %>
                 <li><h3>Enter Game Title for Search...</h3></li>
               <% else %>
                 <li><h3>Coming Soon...</h3></li>
