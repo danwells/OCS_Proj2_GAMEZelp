@@ -41,7 +41,8 @@ class Site < ActiveRecord::Base
   def nokogiriGetGuideLinksWithTitles(game_title)
     # Setup
     link_titles = []
-    game = Game.new(title: game_title.titleize)
+#    game = Game.new(title: game_title.titleize)
+    game = Game.find_or_initialize_by_title_and_site_id(game_title.titleize, self.id)
     
     # Look up Nokogiri info for this site
     query = URI.escape(game_title + " guide")         
