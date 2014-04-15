@@ -17,7 +17,6 @@ class Site < ActiveRecord::Base
     "GiantBomb" => "ul#js-sort-filter-results.editorial.river.search-results li a"
   }
   
-  
   # Public: Retrieve hash of game titles and guide links for the game site. 
   # This is an intermediary method calling the Nokogiri search method.  
   # Currently, it only passes data along but may perform other functions in the 

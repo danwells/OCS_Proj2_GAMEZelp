@@ -39,3 +39,15 @@ gem 'unicorn'
 # gem 'debugger'
 
 gem 'nokogiri'
+
+
+
+group :development, :test do
+  gem 'database_cleaner'
+  gem 'rspec-rails'
+  gem 'capybara'
+  gem 'selenium-webdriver'  # emulates live integration tests, need to have firefox web browser installed
+  # gem 'capybara-webkit'
+  gem 'launchy'       # allows you to save test page from selenium-webdriver
+end
+
