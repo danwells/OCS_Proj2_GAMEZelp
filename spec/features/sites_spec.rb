@@ -31,7 +31,12 @@ describe "Sites" do
   
   it "contains a comming soon prompt for non-implemented site cells" do
     visit sites_path
-    expect(page.all(".guideLinks").last).to have_content("Coming Soon...")
+    boxes = page.all(".guideLinks")
+    boxes.each_with_index do |b, i|
+      if i >= @implemented_sites.count
+        expect(b).to have_content("Coming Soon...")
+      end
+    end
   end
   
 end
