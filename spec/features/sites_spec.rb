@@ -29,4 +29,9 @@ describe "Sites" do
     expect(first(".guideLinks")).to have_content("Enter Game Title for Search...")
   end
   
+  it "contains a comming soon prompt for non-implemented site cells" do
+    visit sites_path
+    expect(page.all(".guideLinks").last).to have_content("Coming Soon...")
+  end
+  
 end
