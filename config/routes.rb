@@ -1,7 +1,5 @@
 Gamezelp::Application.routes.draw do
   
-  get "sites/index"
-
   # Site resources (index is root view)
   resources :sites, :only => :index
   

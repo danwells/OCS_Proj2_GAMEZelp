@@ -42,6 +42,7 @@ class Site < ActiveRecord::Base
     link_titles = []
 #    game = Game.new(title: game_title.titleize)
     game = Game.find_or_initialize_by_title_and_site_id(game_title.titleize, self.id)
+    game.guide_links = []
     
     # Look up Nokogiri info for this site
     query = URI.escape(game_title + " guide")         
@@ -51,10 +52,13 @@ class Site < ActiveRecord::Base
     results = doc.css(CSS_SELECTORS[name])
     
     # Iterate through all the search results finding the title and url for each 
-    # guide link found on the site  
+    # guide link found on the site (Only add url if title is not nil) 
     results.each do |r|
-      link_titles << strip_tags(look_up_title(r))
-      game.guide_links << look_up_link(r)
+      link_title = strip_tags(look_up_title(r))
+      if link_title
+        link_titles << link_title
+        game.guide_links << look_up_link(r)
+      end
     end
             
     # Store new game data for site_id
