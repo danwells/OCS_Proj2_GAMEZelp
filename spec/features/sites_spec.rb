@@ -38,5 +38,19 @@ describe "Sites" do
       end
     end
   end
+
+  it "searching returns links based on game title" do 
+    visit "/?gameSearch[gameQuery]='Battlefield'"
+    # fill_in("gameSearch[gameQuery]", :with => "TestQuery")
+    # find("#gameSearch_gameQuery").native.send_keys(:return)
+    # expect(params[:gameSearch][:gameQuery]).to eq("NONE")
+    # Capybara.default_wait_time = 10
+    # save_and_open_page
+    # visit sites_path
+    # expect(page).to have_content("www.ign.com")
+    # expect(find("#gameSearch_gameQuery")).to have_content("NONE")
+    expect(page).to have_content("Battlefield")
+  end
+  
   
 end
