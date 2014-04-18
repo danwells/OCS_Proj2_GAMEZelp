@@ -1,0 +1,78 @@
+.mainWrapper  
+  / Header Bar (Top Bar/Nav Bar) 
+  #headerBox.centeredContainer
+    /  Header/Top Bar (Title/User/Login/Search)   
+    #top_bar      
+      #top_left
+        %h1#gamezelp_title GAMEZelp
+        %h4#login_btn
+          = @curr_user.fname.titleize + " " + @curr_user.lname.titleize   
+          %a{:href=>"#"} LogIn
+      
+      #title_image GAMEZelp Title Image (Image set in CSS)
+        
+      #search_box
+        = form_tag("/", method: "get") do
+          = search_field("gameSearch", "gameQuery", :placeholder => "Search for game title...") 
+      
+      #logo_container
+        .gz_sprite.gz_blue_logo GZ Sprite Image
+        
+    / Header/Nav Menu Bar (Home, MyGames, Platform, About)
+    .clearfix#nav_bar
+      
+      .navBtn#btn1
+        %a#m1{:href=>"/"}HOME 
+      
+      .navBtn#btn2
+        %a#m2{:href=>"#"}MyGames
+        .drop_down
+          %ul
+            - @prev_queries.each do |query|
+              %li
+                = link_to query, sites_path(:prev_query => query) 
+      
+      .navBtn#btn4
+        %a#m4{:href=>"/"}About
+      
+      .navBtn#btn3
+        %a#m3{:href=>"#"}Platform
+        .drop_down
+          %ul
+            %li ALL (Default)
+            %li PC
+            %li XBox ONE
+            %li XBox 360
+            %li PS3
+            %li PS4
+            %li Wii U
+            %li 3DS
+            %li Vita
+    
+  / Site Grid Galery  
+  .sites_wrap
+    
+    - @sites.each_with_index do |site, i| 
+    
+      / Define box tile for each site
+      .site_box
+        .boxInner
+          .titleBox
+            = site.name 
+
+          %div= image_tag(site.background_img, alt: "#{site.name} Logo Image")
+  
+          .guideLinks
+            
+            / List resultant guide links (name,url) for site at index i
+            %ul  
+              - if (@site_results[i]) 
+                - @site_results[i]["links"].each_with_index do |link, index| 
+                  %li
+                    = link_to @site_results[i]["titles"][index], link 
+              - elsif i < @implemented_sites.count 
+                %li
+                  %h3 Enter Game Title for Search...
+              - else 
+                %li
+                  %h3 Coming Soon...
