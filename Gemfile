@@ -42,6 +42,8 @@ gem 'unicorn'
 
 gem 'nokogiri'
 
+gem 'sunspot_rails'
+gem 'sunspot_solr'
 
 
 group :development, :test do
@@ -51,5 +53,8 @@ group :development, :test do
   gem 'selenium-webdriver'  # emulates live integration tests, need to have firefox web browser installed
   # gem 'capybara-webkit'
   gem 'launchy'       # allows you to save test page from selenium-webdriver
+  gem 'rack-mini-profiler'
+  gem "lol_dba"  # rake db:find_indexes
+  gem 'consistency_fail'
 end
 

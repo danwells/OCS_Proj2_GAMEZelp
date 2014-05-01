@@ -17,8 +17,7 @@ class SitesController < ApplicationController
     if (game_title)
       Site.where(name: @implemented_sites).each do |s|
         @site_results << s.guideLinksHash(game_title)
-      end      
-      
+      end            
     end
     
     @curr_user = User.find_by_fname("default")

@@ -1,8 +1,26 @@
 class Site < ActiveRecord::Base
   attr_accessible :background_img, :base_url, :logo_img, :name, :search_string, :user_id
   
+  after_commit :delete_site_cache # hook to update cache after a change to model objects
+  
   has_many :games
   belongs_to :user
+  
+  #### Add sunspot/solr search on selected fields or methods. Add a table column(s) or whole new Model to store the links returned by Nokogiri instead of using temporary hashes and then search through the new column(s).
+  # after_commit :reindex
+  # 
+  # searchable do
+  #   text :name
+  #   text :base_url
+  #   #text #:links
+  # end
+  # 
+  # def reindex
+  #   Site.reindex
+  #   Sunspot.commit
+  # end  
+  # 
+  ####
   
   validates :name, :presence => true, :uniqueness => true
   validates :base_url, :presence => true
@@ -27,6 +45,10 @@ class Site < ActiveRecord::Base
   # Returns a hash containing an Array of titles and url links found on the 
   # game site
   def guideLinksHash(game_title)
+    
+    ############ Change web search to be more expansive in nokogiri search and then use sunspot/solr full text searching to whittle that down and/or rank the results.
+    #############
+    
     return nokogiriGetGuideLinksWithTitles(game_title)
   end
 
@@ -43,6 +65,10 @@ class Site < ActiveRecord::Base
 #    game = Game.new(title: game_title.titleize)
     game = Game.find_or_initialize_by_title_and_site_id(game_title.titleize, self.id)
     game.guide_links = []
+    
+
+    ############ Change web search to be more expansive in nokogiri search and then use sunspot/solr full text searching to whittle that down and/or rank the results.
+    #############
     
     # Look up Nokogiri info for this site
     query = URI.escape(game_title + " guide")         
@@ -104,5 +130,28 @@ class Site < ActiveRecord::Base
     when "GiantBomb" then return "http://" + base_url + result.attributes["href"].value
     end
   end
+  
+  # Instance cache methods
+  def cached_name
+    # self.name
+    Rails.cache.fetch([self, "site_name"]) { self.name }
+  end
+  
+  # When I update SOME SITE, it should delete its cache
+  def delete_site_cache
+    Rails.cache.delete(["Site", self.id])
+  end
+  
+  # Class cache methods
+  def self.cached_find(id)
+    # Functions like regular AR find method but using cache.
+    # Use Classes' name and id as key
+    Rails.cache.fetch(["Site", id]) { find(id) }
+    # == Rails.cache.fetch([self.name, id]) { find(id) }
+  end
+  
+  # def self.names_and_other_info
+  #   Rails.cache.fetch("any_key such as sites") #{ insert large collection query here }
+  # end
   
 end
