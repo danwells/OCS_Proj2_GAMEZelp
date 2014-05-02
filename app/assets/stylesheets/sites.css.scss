@@ -28,6 +28,10 @@ margin: 0;
 //  box-sizing: border-box;
 //}
 
+//html, body {
+//  height: 100%;
+//}
+
 body {
 /*  margin: 0;*/
 /*  padding: 0;*/
@@ -271,24 +275,6 @@ h4#login_btn a {
   border: 1px solid rgb(73, 72, 72);
 }
 
-@media screen and (max-width: 920px) {
-  .site_box {
-    width: 49%;
-    padding-bottom: 49%;
-    margin: 0.5%;
-    box-sizing: border-box;    
-  }
-}
-
-@media screen and (max-width: 500px) {
-  .site_box {
-    width: 99%;
-    padding-bottom: 99%;
-    margin: 0.5%;
-    box-sizing: border-box;    
-  }
-}
-
 .boxInner {
   position: absolute;
   left: 10px;
@@ -367,3 +353,31 @@ h4#login_btn a {
 .guideLinks li a:active {
   background-color: rgba(135, 100, 233, 0.8);
 }
+
+
+/* ------------------- Responsiveness ----------------- */
+
+@media screen and (max-width: 920px) {
+  .site_box {
+    width: 49%;
+    padding-bottom: 49%;
+    margin: 0.5%;
+    box-sizing: border-box;    
+  }
+  #nav_bar .navBtn {
+    font-size: large;
+  }
+  .drop_down {
+    font-size: medium;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .site_box {
+    width: 99%;
+    padding-bottom: 99%;
+    margin: 0.5%;
+    box-sizing: border-box;    
+  }
+}
+
