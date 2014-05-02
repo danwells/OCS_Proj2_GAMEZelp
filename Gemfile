@@ -42,8 +42,8 @@ gem 'unicorn'
 
 gem 'nokogiri'
 
-gem 'sunspot_rails'
-gem 'sunspot_solr'
+# gem 'sunspot_rails'
+# gem 'sunspot_solr'
 
 
 group :development, :test do
