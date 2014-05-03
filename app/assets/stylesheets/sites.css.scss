@@ -357,27 +357,27 @@ h4#login_btn a {
 
 /* ------------------- Responsiveness ----------------- */
 
-//@media screen and (max-width: 500px) {
-//  .site_box {
-//    width: 99%;
-//    padding-bottom: 99%;
-//    margin: 0.5%;
-//    box-sizing: border-box;    
-//  }
-//}
-//
-//@media screen and (max-width: 920px) and (min-width: 501px) {
-//  .site_box {
-//    width: 49%;
-//    padding-bottom: 49%;
-//    margin: 0.5%;
-//    box-sizing: border-box;    
-//  }
-//  #nav_bar .navBtn {
-//    font-size: large;
-//  }
-//  .drop_down {
-//    font-size: medium;
-//  }
-//}
+@media screen and (max-width: 500px) {
+  .site_box {
+    width: 99%;
+    padding-bottom: 99%;
+    margin: 0.5%;
+    box-sizing: border-box;    
+  }
+}
+
+@media screen and (max-width: 920px) and (min-width: 501px) {
+  .site_box {
+    width: 49%;
+    padding-bottom: 49%;
+    margin: 0.5%;
+    box-sizing: border-box;    
+  }
+  #nav_bar .navBtn {
+    font-size: large;
+  }
+  .drop_down {
+    font-size: medium;
+  }
+}
 
