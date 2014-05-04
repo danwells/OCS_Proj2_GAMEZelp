@@ -8,10 +8,14 @@ $('document').ready(function(){
   // Nav bar drop down menu animation
   $(".navBtn").hover(
     function(){
-      $(this).find('.drop_down').slideDown();
+      $(this).find('.drop_down').slideDown(200, function() {
+        $(this).clearQueue();
+      });
     },
     function(){
-      $(this).find('.drop_down').slideUp();
+      $(this).find('.drop_down').slideUp(200, function() {
+        $(this).clearQueue();
+      });
     });
    
   // Sprite switch on hover 
