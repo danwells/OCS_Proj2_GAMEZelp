@@ -102,6 +102,7 @@ h1#gamezelp_title {
 
 h4#login_btn {
   margin-top: 15px;
+  transition: all 0.3s ease-out;
 }
 h4#login_btn a {
   color: lawngreen;
@@ -355,12 +356,42 @@ h4#login_btn a {
 
 /* ------------------- Responsiveness ----------------- */
 
+@media screen and (max-width: 920px) { 
+  #top_bar #search_box {
+    right: 0;
+    width: 90%;
+    margin: 2% 5%;
+    padding-right: 0;
+    background-color: aliceblue;
+  }
+  #nav_bar .navBtn {
+    font-size: large;
+  }
+  .drop_down {
+    font-size: medium;
+  }
+  .site_box {
+    width: 49%;
+    padding-bottom: 49%;
+    margin: 0.5%;
+    box-sizing: border-box;    
+  }
+}
+
 @media screen and (max-width: 500px) {
   $small-back: 128px;
   $small-offset: 64px;
   
+  #headerBox #top_left {
+    height: 0;
+  }
   #title_image {
+    width: 250px;
     left: -12px;
+  }
+  h4#login_btn {
+    margin-top: -25px;
+    margin-left: -75px;
   }
   #top_bar #search_box {
     margin: 5% 5%;
@@ -396,25 +427,4 @@ h4#login_btn a {
   }
 }
 
-@media screen and (max-width: 920px) { 
-  #top_bar #search_box {
-    right: 0;
-    width: 90%;
-    margin: 2% 5%;
-    padding-right: 0;
-    background-color: aliceblue;
-  }
-  #nav_bar .navBtn {
-    font-size: large;
-  }
-  .drop_down {
-    font-size: medium;
-  }
-  .site_box {
-    width: 49%;
-    padding-bottom: 49%;
-    margin: 0.5%;
-    box-sizing: border-box;    
-  }
-}
 
