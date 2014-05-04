@@ -1,7 +1,10 @@
 // Place all the behaviors and hooks related to the matching controller here.
 // All this logic will automatically be available in application.js.
+$(window).load(function() {
+  $(".loader").fadeOut("slow");
+});
+
 $('document').ready(function(){
-  
   // Nav bar drop down menu animation
   $(".navBtn").hover(
     function(){
@@ -32,11 +35,13 @@ $('document').ready(function(){
   // Sprite switch on form submit
   $("form").submit(function(event){
     $('.gz_sprite').removeClass().addClass("gz_sprite gz_red_logo");
+    $(".loader").fadeIn("slow");
   });   
 
   // Sprite switch on link click
   $("a").on("click", function(){
     $('.gz_sprite').removeClass().addClass("gz_sprite gz_red_logo");
+    $(".loader").fadeIn("slow");
   });   
   
   
