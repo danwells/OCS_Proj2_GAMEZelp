@@ -126,22 +126,22 @@ h4#login_btn a {
 #top_bar #search_box {
   z-index: 50;
   position: relative;
-  right: 200px;
-  width: 227px;
+  right: 170px;
+  width: 300px;
   height: 35px;
   float: right;
   margin-top: 40px;
   margin-right: 30px;
   padding-right: 10px;
   background-color: aliceblue;
-  border-radius: 5px;
+  border-radius: 20px;
   vertical-align: top;
 }
 
 #search_box #gameSearch_gameQuery {
   margin: 5px;
   padding: 0px;
-  width: 227px;
+  width: 300px;
   height: 26px;
   vertical-align: middle;
   background: none;
@@ -154,7 +154,6 @@ h4#login_btn a {
 
 #logo_container {
   position: absolute;
-  /* float: right; */
   right: 17px;
   top: 2px;  
 }
@@ -214,8 +213,7 @@ h4#login_btn a {
 
 .drop_down {
   position: relative;
-  /* bottom: 0px; */
-   top: 6px; 
+  top: 6px; 
   border-top-width: 1px;
   border-top-style: solid;
   border-top-color: rgb(195, 92, 243);
@@ -358,6 +356,38 @@ h4#login_btn a {
 /* ------------------- Responsiveness ----------------- */
 
 @media screen and (max-width: 500px) {
+  $small-back: 128px;
+  $small-offset: 64px;
+  
+  #title_image {
+    left: -12px;
+  }
+  #top_bar #search_box {
+    margin: 5% 5%;
+  }
+  #logo_container {
+    right: 2px;    
+  }
+  .gz_sprite {
+    width: 64px;
+    padding-top: 64px;
+  }
+  .gz_blue_logo {
+    background-size: $small-back;
+    background-position: 0px 0px;
+  }
+  .gz_red_logo {
+    background-size: $small-back;
+    background-position: $small-offset 0px;
+  }
+  .gz_green_logo {
+    background-size: $small-back;
+    background-position: $small-offset $small-offset;
+  }
+  .gz_purple_logo {
+    background-size: $small-back;
+    background-position: 0px $small-offset;
+  }
   .site_box {
     width: 99%;
     padding-bottom: 99%;
@@ -366,18 +396,25 @@ h4#login_btn a {
   }
 }
 
-@media screen and (max-width: 920px) and (min-width: 501px) {
-  .site_box {
-    width: 49%;
-    padding-bottom: 49%;
-    margin: 0.5%;
-    box-sizing: border-box;    
+@media screen and (max-width: 920px) { 
+  #top_bar #search_box {
+    right: 0;
+    width: 90%;
+    margin: 2% 5%;
+    padding-right: 0;
+    background-color: aliceblue;
   }
   #nav_bar .navBtn {
     font-size: large;
   }
   .drop_down {
     font-size: medium;
+  }
+  .site_box {
+    width: 49%;
+    padding-bottom: 49%;
+    margin: 0.5%;
+    box-sizing: border-box;    
   }
 }
 
