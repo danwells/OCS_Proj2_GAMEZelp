@@ -29,7 +29,7 @@
         .drop_down
           %ul
             - @prev_queries.each do |query|
-              %li
+              %li#saved_query
                 = link_to query, sites_path(:prev_query => query) 
       
       .navBtn#btn4

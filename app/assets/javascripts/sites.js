@@ -36,7 +36,7 @@ $('document').ready(function(){
       $('.gz_sprite').removeClass().addClass("gz_sprite gz_blue_logo");
     });
 
-  // Sprite switch on form submit
+  // Sprite switch and loading graphic on form submit
   $("form").submit(function(event){
     $('.gz_sprite').removeClass().addClass("gz_sprite gz_red_logo");
     $(".loader").fadeIn("slow");
@@ -45,6 +45,12 @@ $('document').ready(function(){
   // Sprite switch on link click
   $("a").on("click", function(){
     $('.gz_sprite').removeClass().addClass("gz_sprite gz_red_logo");
+    // $(".loader").fadeIn("slow");
+  });   
+  
+  // Loading graphic on saved_query link click
+  $("li#saved_query a").on("click", function(){
+    // $('.gz_sprite').removeClass().addClass("gz_sprite gz_red_logo");
     $(".loader").fadeIn("slow");
   });   
   
